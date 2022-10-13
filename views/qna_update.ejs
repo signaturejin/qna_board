@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>수정페이지</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <%- include("common/header.ejs"); %>
+    <div id="container">
+        <%- include("common/banner.ejs"); %>
+        <div class="qna_board">
+            <div class="center">
+                <h3 class="title">문의하기</h3>
+                <div class="notice">
+                    지엔테크 제품에 대한 <span>궁금한 사항이나 관련 자료</span>가 필요하신분들은 글을 남겨주세요.<br>
+                    담당자 확인 후 전화나 메일로 답변을 드리겠습니다.
+                </div>
+                <div class="form_wrap">
+                    <form id="qna_form" action="/update" method="post">
+                        <!-- qna_id를 받아오기 위한 히든인풋태그 -->
+                        <input type="hidden" name="id" value="<%- data.qna_id %>">
+                        <div class="input_wrap">
+                            <label for="author">작성자</label>
+                            <input type="text" name="author" id="author" value="<%- data.qna_author %>">
+                        </div>
+                        <div class="input_wrap">
+                            <label for="title">제목</label>
+                            <input type="text" name="title" id="title" value="<%- data.qna_title %>">
+                        </div>
+                        <div class="tarea_wrap">
+                            <label for="context">문의사항</label>
+                            <textarea name="context" id="context"><%- data.qna_context %></textarea>
+                        </div>
+                        <div class="btn_set">
+                            <button class="ok_btn" type="submit">문의하기</button>
+                            <!-- <button class="no_btn" type="button">취소</button> -->
+                            <a class="no_btn" href="/detail/<%- data.qna_id %>">취소</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include("common/footer.ejs"); %>
+</body>
+</html>

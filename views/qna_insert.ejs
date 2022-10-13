@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문의게시판</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <%- include("common/header.ejs"); %>
+    <div id="container">
+        <%- include("common/banner.ejs"); %>
+        <div class="qna_board">
+            <div class="center">
+                <h3 class="title">문의하기</h3>
+                <div class="notice">
+                    지엔테크 제품에 대한 <span>궁금한 사항이나 관련 자료</span>가 필요하신분들은 글을 남겨주세요.<br>
+                    담당자 확인 후 전화나 메일로 답변을 드리겠습니다.
+                </div>
+                <div class="form_wrap">
+                    <form id="qna_form" action="/qnaAdd" method="post">
+                        <div class="input_wrap">
+                            <label for="author">작성자</label>
+                            <input type="text" name="author" id="author">
+                        </div>
+                        <div class="input_wrap">
+                            <label for="title">제목</label>
+                            <input type="text" name="title" id="title">
+                        </div>
+                        <div class="tarea_wrap">
+                            <label for="context">문의사항</label>
+                            <textarea name="context" id="context"></textarea>
+                        </div>
+                        <div class="btn_set">
+                            <button class="ok_btn" type="submit">문의하기</button>
+                            <!-- <button class="no_btn" type="button">취소</button> -->
+                            <a class="no_btn" href="/list">취소</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include("common/footer.ejs"); %>
+
+    <!-- <script>
+        const noBtn = document.querySelector(".no_btn");
+
+        noBtn.addEventListener("click",function(){
+             window.location.href = "/list";
+        });
+    </script> -->
+</body>
+</html>

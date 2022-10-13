@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상세페이지</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <%- include("common/header.ejs"); %>
+    <div id="container">
+        <%- include("common/banner.ejs"); %>
+        <div class="detail_wrap">
+            <div class="center">
+                <h3 class="title">기업소식</h3>
+                <div class="h_line">
+                    <h4><%- data.qna_title %></h4>
+                    <p class="number"><%- data.qna_id %></p>
+                </div>
+                <div class="text_box">
+                    <p><%- data.qna_context %></p>
+                </div>
+                <div class="bottom">
+                    <div class="time_review">
+                        <span class="qna_date"><%- data.qna_date %></span>
+                        <span class="qna_review">조회수: <%- data.qna_review %></span>
+                    </div>
+                    <div class="btn_set">
+                        <a class="upt_btn" href="/uptview/<%- data.qna_id %>">수정</a>
+                        <a class="del_btn" href="/delete/<%- data.qna_id %>">삭제</a>
+                        <a class="li_btn" href="/list">목록</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include("common/footer.ejs"); %>
+    <!-- js -->
+    <script>
+        //필요한 태그를 생성한다.
+        const del_btn = document.querySelector(".del_btn");
+        //클릭기능을 부여한다.
+        del_btn.addEventListener("click",function(e){
+            //삭제여부를 재확인 하기위해 confirm()함수를 사용하고
+            //이에 따른 값을 변수에 담아준다.
+            let con_value = window.confirm("게시글을 삭제하시겠습니까?");
+            //만약 사용자가 취소를 눌렀다면 삭제가 안되도록한다.
+            if(con_value == false){
+                e.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>

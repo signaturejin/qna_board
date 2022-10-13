@@ -1,0 +1,299 @@
+//*공통 상단영역
+#header {
+    display: flex; justify-content: center;
+    .center {
+        width: 1200px; display: flex;
+        .logo {
+            width: 150px; height: 40px;
+            margin-right: 155px;
+            a {
+                img {width: 100%;}
+            }
+        }
+        .gnb {
+            display: flex;
+            > li {
+                line-height: 80px; margin-right: 80px;
+                > a {
+                    color: #000; font-size: 15px; font-weight: bold;
+                    transition: all 0.3s;
+                    &:hover {color: #303f9e;}
+                }
+            }
+        }
+    }
+}
+
+//중간영역
+#container {
+    height: 1000px; // background-color: rgb(200, 240, 255);
+    //*공통 배너영역
+    .banner {
+        width: 100%; height: 220px;
+        border-bottom: 1px solid #304190;
+        display: flex; justify-content: center; align-items: center;
+        background-image: url(../img/bg1.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        .text_box {
+            text-align: center; color: #fff;
+            h2 {margin-bottom: 23px; font-size: 40px;}
+            p {font-size: 12px;}
+        }
+    }
+    //문의게시판
+    .qna_board {
+        display: flex; justify-content: center;
+        .center {
+            width: 1200px;
+            .title {
+                font-size: 34px; text-align: center;
+                font-weight: lighter;
+                padding: 140px 0 72px;
+            }
+            .notice {
+                width: 100%; background-color: #f5f5f5;
+                text-align: center; padding: 28px 0 30px;
+                font-size: 14px; line-height: 22px;
+                margin-bottom: 20px;
+                // font-weight: bold;
+                span {color: #2e3d9d;}
+            }
+            .form_wrap {
+                width: 1200px; margin: 0 auto;
+                padding-bottom: 57px;
+                #qna_form {
+                    .input_wrap,.tarea_wrap {
+                        width: 100%; display: flex; align-items: center;
+                        border-top: 1px solid #d4d4d4;
+                        line-height: 60px; box-sizing: border-box;
+                        label {
+                            display: block; text-align: center;
+                            width: 220px; background-color: #f2f2f2;
+                            margin-right: 20px; font-size: 15px;
+                        }
+                        input,textarea {
+                            width: 170px; height: 32px; border: 1px solid #d1d1d1;
+                            box-sizing: border-box;
+                        }
+                    }
+                    .input_wrap {
+                        input {background-color: #f7f7f7; padding-left: 8px;}
+                    }
+                    .tarea_wrap {
+                        border-bottom: 1px solid #d4d4d4;
+                        label {line-height: 206px;}
+                        textarea {width: 855px; height: 190px; padding: 8px; margin: 8px 0;}
+                    }
+                    .btn_set {
+                        margin-top: 57px;
+                        display: flex; justify-content: center;
+                        button,a {
+                            display: block; border: none; color: #fff;
+                            font-weight: bold; line-height: 48px;
+                        }
+                        .ok_btn {width: 153px; background-color: #2e3d9d; margin-right: 3px;}
+                        .no_btn {width: 128px; background-color: #999; text-align: center;}
+                    }
+                }
+            }
+        }
+    }
+    //목록리스트
+    .list_wrap {
+        display: flex; justify-content: center;
+        .center {
+            width: 1200px;
+            .title {
+                font-size: 34px; text-align: center;
+                font-weight: lighter;
+                padding: 140px 0 112px;
+            }
+            .t_list {
+                display: flex; justify-content: space-between;
+                align-items: center; margin-bottom: 10px;
+                .total {font-size: 12px;}
+                .search_box {
+                    #ser_select {
+                        width: 110px; height: 30px;
+                        border: 1px solid #ccc;
+                    }
+                    #search {
+                        width: 180px; height: 29px;
+                        border: 1px solid #ccc;
+                        padding-left: 7px;
+                        box-sizing: border-box;
+                    }
+                    .sear_btn{
+                        display: inline-block;
+                        width: 49px; line-height: 29px;
+                        border: 1px solid #ccc;
+                        background-color: #fff;
+                        cursor: pointer;
+                    }
+                }
+            }
+            .list {
+                .h_line {
+                    border-top: 1px solid #333;
+                    border-bottom: 2px solid #333; background-color: #eee;
+                    display: flex; line-height: 55px; box-sizing: border-box;
+                    .line_number {
+                        width: 15%; text-align: center;
+                        // background-color: orange;
+                    }
+                    .line_title {
+                        width: 60%; text-align: center;
+                        // background-color: skyblue;
+                    }
+                    .line_author {
+                        width: 15%;
+                        padding-left: 60px; box-sizing: border-box;
+                        // background-color: violet;
+                    }
+                    .line_review {
+                        width: 10%; text-align: center;
+                        // background-color: pink;
+                    }
+                }
+                .line {
+                    display: flex;
+                    border-bottom: 1px solid #e6e6e6;
+                    line-height: 56px; box-sizing: border-box;
+                    font-size: 15px;
+                    .db_number {
+                        width: 15%; text-align: center;
+                    }
+                    .db_title {
+                        width: 60%; padding-left: 20px;
+                        box-sizing: border-box;
+                        overflow: hidden; text-overflow: ellipsis;
+                        white-space: nowrap;
+                        a {color: #000;}
+                    }
+                    .db_author {
+                        width: 15%; padding-left: 60px;
+                        box-sizing: border-box;
+                    }
+                    .db_review {
+                        width: 10%; text-align: center;
+                    }
+                }
+            }
+            .right {
+                display: flex; justify-content: flex-end;
+                .write_btn {
+                    display: block; width: 72px; line-height: 34px;
+                    text-align: center; background-color: #333;
+                    color: #fff; margin-top: 55px;
+                }
+            }
+        }
+    }
+    //상세페이지
+    .detail_wrap {
+        display: flex; justify-content: center;
+        .center {
+            width: 1200px;
+            .title {
+                font-size: 34px; text-align: center;
+                font-weight: lighter;
+                padding: 135px 0 72px;
+            }
+            .h_line {
+                border-top: 2px solid #333;
+                border-bottom: 1px solid #e6e6e6;
+                display: flex; justify-content: space-between;
+                line-height: 62px;
+                h4 {
+                    margin-left: 5px; font-size: 16px;
+                    white-space: nowrap; overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+                .number {margin-right: 5px; font-size: 12px;}
+            }
+            .text_box {
+                padding: 40px 0 0 9px; height: 280px;
+                box-sizing: border-box;
+                border-bottom: 1px solid #e6e6e6;
+                margin-bottom: 15px;
+                p {
+                    font-size: 15px; line-height: 32px;
+                    white-space: pre;
+                }
+            }
+            .bottom {
+                display: flex; justify-content: space-between;
+                .time_review {
+                    padding-left: 8px; font-size: 12px;
+                    color: #5a5a5a;
+                    .qna_review {margin-left: 11px;}
+                }
+                .btn_set {
+                    display: flex; justify-content: flex-end;
+                    a {
+                        width: 72px; line-height: 34px;
+                        text-align: center; color: #fff;
+                        margin-left: 8px;
+                    }
+                    .upt_btn {background-color: #304190;}
+                    .del_btn {background-color: #999;}
+                    .li_btn {background-color: #333;}
+                }
+            }
+        }
+    }
+}
+
+//*공통 하단영역
+#footer {
+    margin-top: 200px;
+    .f_top {
+        width: 100%; background-color: #f4f4f4;
+        display: flex; justify-content: center;
+        .center {
+            width: 1200px;
+            .f_menu {
+                display: flex;
+                li {
+                    line-height: 50px;
+                    &::after {
+                        content: ""; display: inline-block;
+                        width: 1px; height: 11px; background-color: #c4c4cd;
+                        margin: 0 10px;
+                    }
+                    &:last-child {
+                        &::after {display: none;}
+                    }
+                    a {color: #444; font-size: 14px;}
+                }
+            }
+        }
+    }
+    .f_bot {
+        display: flex; justify-content: center;
+        .center {
+            width: 1200px; display: flex;
+            .f_logo {
+                width: 150px; height: 40px;
+                margin: 5px 40px 0 0;
+                img {width: 100%;}
+            }
+            .right {
+                margin-top: 30px;
+                .addr {
+                    margin-bottom: 15px; font-size: 12px;
+                    font-weight: bold; color: #444;
+                    span {margin-right: 20px;}
+                    .comp {color: #2e3d9d; margin-right: 54px;}
+                }
+                .copy {
+                    padding-bottom: 47px; font-size: 11px;
+                    color: #777;
+                    span {color: #444;}
+                }
+            }
+        }
+    }
+}
