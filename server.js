@@ -120,3 +120,29 @@ app.post("/update",function(req,res){
         res.redirect("/detail/" + req.body.id);
     });
 });
+
+
+//게시글 검색기능
+app.get("/searchAdd",function(req,res){
+    //mongodb에서 지원하는 search index에서 가져온 배열객체를 변수에 담아준다.
+    let search_data = [
+        {
+          $search: {
+            //mongodb에서 search index 만들 때 내가 지어준 이름
+            index: 'qna_search',
+            text: {
+              //서치인풋에서 쓴 값을 가져옴 - 이때 query로
+              //option의 value값은 db에 저장된 이름으로 써야함
+              query: req.query.search,
+              //경로
+              path: req.query.ser_select
+            }
+          }
+        }
+      ];
+
+    db.collection("qna_board").aggregate(search_data).toArray(function(err,result){
+        res.render("qna_list",{data:result});
+    });
+
+});

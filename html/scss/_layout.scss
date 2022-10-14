@@ -30,14 +30,21 @@
     //*공통 배너영역
     .banner {
         width: 100%; height: 220px;
+        position: relative;
         border-bottom: 1px solid #304190;
         display: flex; justify-content: center; align-items: center;
         background-image: url(../img/bg1.jpg);
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
+        .bg {
+            background-color: rgba(0,0,0,0.5);
+            width: 100%; height: 100%;
+            position: absolute; top: 0; left: 0;
+        }
         .text_box {
             text-align: center; color: #fff;
+            z-index: 99;
             h2 {margin-bottom: 23px; font-size: 40px;}
             p {font-size: 12px;}
         }
@@ -93,7 +100,7 @@
                             display: block; border: none; color: #fff;
                             font-weight: bold; line-height: 48px;
                         }
-                        .ok_btn {width: 153px; background-color: #2e3d9d; margin-right: 3px;}
+                        .ok_btn {width: 153px; background-color: #2e3d9d; margin-right: 18px;}
                         .no_btn {width: 128px; background-color: #999; text-align: center;}
                     }
                 }
@@ -137,20 +144,23 @@
             .list {
                 .h_line {
                     border-top: 1px solid #333;
-                    border-bottom: 2px solid #333; background-color: #eee;
+                    border-bottom: 1px solid #333; background-color: #eee;
                     display: flex; line-height: 55px; box-sizing: border-box;
                     .line_number {
-                        width: 15%; text-align: center;
+                        width: 10%; text-align: center;
                         // background-color: orange;
                     }
                     .line_title {
-                        width: 60%; text-align: center;
+                        width: 50%; text-align: center;
                         // background-color: skyblue;
                     }
                     .line_author {
-                        width: 15%;
+                        width: 20%;
                         padding-left: 60px; box-sizing: border-box;
                         // background-color: violet;
+                    }
+                    .line_date {
+                        width: 10%; text-align: center;
                     }
                     .line_review {
                         width: 10%; text-align: center;
@@ -161,20 +171,23 @@
                     display: flex;
                     border-bottom: 1px solid #e6e6e6;
                     line-height: 56px; box-sizing: border-box;
-                    font-size: 15px;
+                    font-size: 15px; color: #505050;
                     .db_number {
-                        width: 15%; text-align: center;
+                        width: 10%; text-align: center;
                     }
                     .db_title {
-                        width: 60%; padding-left: 20px;
+                        width: 50%; padding-left: 35px;
                         box-sizing: border-box;
                         overflow: hidden; text-overflow: ellipsis;
                         white-space: nowrap;
                         a {color: #000;}
                     }
                     .db_author {
-                        width: 15%; padding-left: 60px;
+                        width: 20%; padding-left: 60px;
                         box-sizing: border-box;
+                    }
+                    .db_date {
+                        width: 10%; text-align: center;
                     }
                     .db_review {
                         width: 10%; text-align: center;
@@ -183,10 +196,10 @@
             }
             .right {
                 display: flex; justify-content: flex-end;
-                .write_btn {
+                .write_btn, .list_btn {
                     display: block; width: 72px; line-height: 34px;
                     text-align: center; background-color: #333;
-                    color: #fff; margin-top: 55px;
+                    color: #fff; margin-top: 55px; margin-left: 10px;
                 }
             }
         }
@@ -202,16 +215,16 @@
                 padding: 135px 0 72px;
             }
             .h_line {
-                border-top: 2px solid #333;
+                border-top: 1px solid #333;
                 border-bottom: 1px solid #e6e6e6;
                 display: flex; justify-content: space-between;
                 line-height: 62px;
                 h4 {
-                    margin-left: 5px; font-size: 16px;
+                    margin-left: 9px; font-size: 16px;
                     white-space: nowrap; overflow: hidden;
                     text-overflow: ellipsis;
                 }
-                .number {margin-right: 5px; font-size: 12px;}
+                .number {margin-right: 12px; font-size: 12px;}
             }
             .text_box {
                 padding: 40px 0 0 9px; height: 280px;
@@ -248,7 +261,7 @@
 
 //*공통 하단영역
 #footer {
-    margin-top: 200px;
+    margin-top: 120px;
     .f_top {
         width: 100%; background-color: #f4f4f4;
         display: flex; justify-content: center;
